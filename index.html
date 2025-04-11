@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOOYOUNG LEE Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Calibri, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+        }
+
+        header,
+        section {
+            padding: 60px 20px;
+            max-width: 960px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        nav {
+            background: #f0f0f0;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        nav.dark-mode {
+            background: #2a2a2a;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .dark-mode nav a {
+            color: #f0f0f0;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            background: none;
+            border: 1px solid #999;
+            padding: 5px 10px;
+            margin-left: 20px;
+            border-radius: 5px;
+        }
+
+        section {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        section h1,
+        section h2 {
+            text-align: center;
+        }
+
+        .name-display {
+            text-align: left;
+        }
+
+
+        .dark-mode section {
+            border-color: #444;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .project,
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .resources {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .resources summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .resources a {
+            display: block;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f9f9f9;
+            color: #666;
+        }
+
+        .dark-mode footer {
+            background: #2a2a2a;
+            color: #aaa;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            max-width: 200px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .about-buttons a {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            /* light gray */
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            gap: 10px;
+        }
+
+        .about-buttons a:hover {
+            background-color: #c7c7c7;
+            /* slightly darker gray on hover */
+        }
+
+        .email-icon,
+        .linkedin-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .about-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-decoration: underline;
+        }
+
+        .skill-category ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .position-org {
+            text-align: left;
+        }
+
+        .location-date {
+            text-align: right;
+        }
+
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <strong>SOOYOUNG LEE</strong>
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <div class="about-container">
+            <img src="images/sooyoung.jpg" alt="Sooyoung Lee" class="about-image" />
+            <div class="about-text">
+                <h2 class="name-display">SOOYOUNG LEE</h2>
+                <div class="about-buttons">
+                    <a href="https://www.linkedin.com/in/swimlee" target="_blank" class="about-button">
+                        <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" class="linkedin-icon" />
+                        LinkedIn
+                    </a>
+                    <a href="pdfs/Sooyoung_Lee_Resume.pdf" target="_blank" class="about-button">
+                        📄 Resume
+                    </a>
+                </div>
+                <p>
+                    🎓 <strong>B.S. in Communications</strong>,🎯 <strong>Minor in Information Systems</strong>,
+                    University of Utah <em>(Expected May 2025)</em><br />
+                    🎓 <strong>M.S. in Information Systems</strong>, Starting <em>Fall 2025</em><br /><br>
+                <p>Hello! I'm Sooyoung, a Communications major and soon-to-be Information Systems graduate, passionate
+                    about web development and technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .about-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .about-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-button img {
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        .about-button:hover {
+            transform: scale(1.05);
+            background-color: #555;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .about-button {
+                background-color: #333;
+                color: white;
+            }
+
+            .about-button:hover {
+                background-color: #444;
+            }
+        }
+    </style>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">Adobe Express</div>
+            <div class="skill-box">Premiere Pro</div>
+            <div class="skill-box">After Effects</div>
+            <div class="skill-box">Photoshop</div>
+            <div class="skill-box">Final Cut Pro</div>
+            <div class="skill-box">Microsoft Office</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">HTML/CSS/JavaScript</div>
+            <div class="skill-box">Django & REST API</div>
+        </div>
+    </section>
+
+    <style>
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-box {
+            background-color: #f0f0f0;
+            color: #000;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-box:hover {
+            transform: scale(1.05);
+            background-color: #dcdcdc;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .skill-box {
+                background-color: #333;
+                color: #fff;
+            }
+
+            .skill-box:hover {
+                background-color: #444;
+            }
+        }
+    </style>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- Movie Listing Website Project -->
+        <div class="project">
+            <div class="project-header">
+                <h3 class="project-title">Parking Permit Website</h3>
+                <span class="project-date">Apr 2025</span>
+            </div>
+            <p>A Django-based CRUD app with API endpoints and responsive design.</p>
+            <div class="resources">
+            </div>
+        </div>
+
+        <!-- Generative AI Competition Project -->
+        <div class="project">
+            <div class="project-header">
+                <h3 class="project-title">Generative AI Competition</h3>
+                <span class="project-date">Mar 2025</span>
+            </div>
+            <p>Utilized Retool to build a website with a chatbot feature for Children’s Step Pediatric Hospital.</p>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <img src="images/1744359522896-4.jpg" alt="Generative AI Competition Image">
+                    <a href="pdfs/AI_Hackathon_Web_Demo_SP25.pdf" target="_blank">Generative AI Competition Demo</a>
+                    <a href="pdfs/AI Competition_Presentation_SP25.pdf" target="_blank">Generative AI Competition
+                        Presentation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Systems Game Day Analytics Challenge Project -->
+        <div class="project">
+            <div class="project-header">
+                <h3 class="project-title">Information Systems Game Day Analytics Challenge</h3>
+                <span class="project-date">Feb 2025</span>
+            </div>
+            <p>Analyzed Super Bowl commercial tweets from Twitter API using Python to provide valuable insights to
+                advertisers, including sentiment and return on ad spend.</p>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <a href="pdfs/Game_Day_Whitepaper_SP25.pdf" target="_blank">Game Day Analytics Report</a>
+                    <a href="pdfs/Game_Day_Infographic_SP25.pdf" target="_blank">Game Day Analytics Presentation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domo-Layton Construction Hackathon Project -->
+        <div class="project">
+            <div class="project-header">
+                <h3 class="project-title">Domo-Layton Construction Hackathon</h3>
+                <span class="project-date">Nov 2024</span>
+            </div>
+            <p>Utilized Domo to identify variables correlating with safety incidents across all 2023-24 Layton
+                Construction work sites to provide KPIs and actionable insights for the management team. Completed in
+                under 48 hours.</p>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <a href="pdfs/Domo-Layton_FA24.pdf" target="_blank">Domo-Layton Hackathon Presentation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Impact Challenge Project -->
+        <div class="project">
+            <div class="project-header">
+                <h3 class="project-title">Social Impact Challenge : Eccles Adobe Business Case Competition</h3>
+                <span class="project-date">Oct 2024</span>
+            </div>
+            <p>Achieved Adobe Badge for Small Business Social Marketing. Utilized Adobe Express software to design and
+                develop a marketing campaign for Tech-moms.</p>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <img src="images/small-biz-social-media-marketing.png" alt="Adobe Social Impact Challenge Image">
+                    <a href="pdfs/Adobe_Social_Impact_Challenge_FA24.pdf" target="_blank">Adobe Social Impact
+                        Challenge</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salesforce-Eccles Ideathon Project -->
+        <div class="project">
+            <div class="project-header">
+                <h3 class="project-title">Salesforce-Eccles Ideathon : Chat Bot Design & Development Competition</h3>
+                <span class="project-date">Sep 2024</span>
+            </div>
+            <p>Utilized Salesforce CRM platform to design and develop a chatbot, presenting the team's solution to a
+                panel of judges.</p>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <a href="pdfs/IDEAthon Documentation_FA24.pdf" target="_blank">Salesforce Ideathon Report</a>
+                    <a href="pdfs/Salesforce IDEAthon_FA24.pdf" target="_blank">Salesforce Ideathon Presentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .project {
+            margin-bottom: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .project-date {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .resources {
+            margin-top: 1rem;
+        }
+
+        .resource-attachments {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .resource-attachments img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .resource-attachments img:hover {
+            transform: scale(2.5) translate(15px, 0);
+            object-fit: contain;
+            z-index: 10;
+        }
+
+        .resource-attachments a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-attachments a:hover {
+            transform: scale(1.05);
+            background-color: #dcdcdc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="experience">
+            <div class="experience-header">
+                <div class="left">
+                    <div class="position">Research Assistant Intern</div>
+                    <div class="organization">Korea Defense Veterans Association</div>
+                </div>
+                <div class="right">
+                    <div class="location">Salt Lake City, UT</div>
+                    <div class="date">Jan 2025 – Present</div>
+                </div>
+            </div>
+            <ul>
+                <li>Researching ROK-U.S. Alliance topics, writing articles for the KDVA Quarterly Journal, Monthly
+                    Newsletter, and social media, and assisting with social media management.</li>
+            </ul>
+        </div><br>
+
+        <div class="experience">
+            <div class="experience-header">
+                <div class="left">
+                    <div class="position">External & Alumni Relations Intern</div>
+                    <div class="organization">Office of External & Alumni Relations, University of Utah Asia Campus
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="location">Incheon, South Korea</div>
+                    <div class="date">Jul 2023 – Dec 2023</div>
+                </div>
+            </div>
+            <ul>
+                <li>Collaborated with external organizations for more external activities and tripled the participants
+                    from 20 to 60 students.</li>
+                <li>Developed 15+ local business partnerships with the University.</li>
+                <li>Promoted the Utah Alumni Dinner Event to connect students with the University President, State of
+                    Utah Senators, and alumni, while also hosting in-school guest speaking sessions with a Major General
+                    (USAR).</li>
+            </ul>
+        </div><br>
+
+        <div class="experience">
+            <div class="experience-header">
+                <div class="left">
+                    <div class="position">Special Forces Interpreter & Translator</div>
+                    <div class="organization">Republic of Korea Special Warfare Command, CSOCC</div>
+                </div>
+                <div class="right">
+                    <div class="location">Gyeonggi, South Korea</div>
+                    <div class="date">Feb 2021 – Aug 2022</div>
+                </div>
+            </div>
+            <ul>
+                <li>Interpreted military operations for special mission units and translated military intelligence
+                    between the ROK Special Forces and the US Special Forces (USASOC & AFSOC).</li>
+                <li>Appreciation Award Recipient – Participated in Combined Command Post Training with the US Special
+                    Forces as the Interpreter of the Combined Joint Special Operations Liaison Element.</li>
+                <li>Achieved the Certificate of Qualification for Airborne Basic Course.</li>
+            </ul>
+        </div>
+    </section>
+
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-buttons">
+            <a href="mailto:markeesy@gmail.com" class="contact-button">
+                <img src="images/gmail.png" alt="Email Icon" class="email-icon" />
+                Email
+            </a>
+        </div>
+    </section>
+
+    <style>
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            /* Light-themed background */
+            color: #333;
+            /* Dark text color for contrast */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-button img {
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.05);
+            background-color: #ddd;
+            /* Slightly darker background on hover */
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact-button {
+                background-color: #444;
+                /* Dark background in dark mode */
+                color: white;
+                /* Light text for dark mode */
+            }
+
+            .contact-button:hover {
+                background-color: #555;
+                /* Slightly lighter background on hover */
+            }
+        }
+    </style>
+
+    <footer>
+        <p>&copy; 2025 SOOYOUNG LEE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('navbar').classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
