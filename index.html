@@ -5,13 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
     <title>SOOYOUNG LEE Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Calibri, Arial, sans-serif;
+            font-family: 'DM Sans', 'Poppins', sans-serif;
         }
 
         body {
@@ -43,7 +46,15 @@
             top: 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             z-index: 1000;
+        }
+
+        nav strong {
+            display: flex;
+            font-size: 20px;
+            align-items: center;
+            height: 100%; /* Helps vertical centering */
         }
 
         nav.dark-mode {
@@ -343,8 +354,17 @@
                     University of Utah <em>(Expected May 2025)</em><br />
                     🎓 <strong>M.S. in Information Systems</strong>, Starting <em>Fall 2025</em>
                 </p><br>
-                <p>Hello! I'm Sooyoung, a Communications major and soon-to-be Information Systems graduate, passionate
-                    about web development and technology.</p>
+
+                <p>Hi, I’m Sooyoung — a Communications major graduating in Spring 2025, passionate about technology,
+                    data, and business strategy. This fall, I’ll be starting my Master’s in Information Systems, where
+                    I’m excited to bridge the gap between communication and technology.</p><br>
+
+                <p>With a strong foundation in storytelling and problem-solving, I’m diving into areas like data
+                    analytics, IT strategy, and digital transformation — all with the goal of driving smarter decisions
+                    and meaningful innovation in business.</p><br>
+
+                <p>I’m always eager to learn, collaborate, and connect with forward-thinking professionals and peers
+                    who share a vision for impactful tech. Let’s build something great together! 🚀</p>
 
             </div>
         </div>
@@ -469,7 +489,9 @@
             <p>Utilized Retool to build a website with a chatbot feature for Children’s Step Pediatric Hospital.</p>
             <div class="resources">
                 <div class="resource-attachments">
-                    <img src="images/1744359522896-4.jpg" alt="Generative AI Competition Image">
+                    <a href="images/1744359522896-4.jpg" target="blank">
+                        <img src="images/1744359522896-4.jpg" alt="Generative AI Competition Image">
+                    </a>
                     <a href="pdfs/AI_Hackathon_Web_Demo_SP25.pdf" target="_blank">Generative AI Competition Demo</a>
                     <a href="pdfs/AI Competition_Presentation_SP25.pdf" target="_blank">Generative AI Competition
                         Presentation</a>
@@ -519,7 +541,10 @@
                 develop a marketing campaign for Tech-moms.</p>
             <div class="resources">
                 <div class="resource-attachments">
-                    <img src="images/small-biz-social-media-marketing.png" alt="Adobe Social Impact Challenge Image">
+                    <a href="images/small-biz-social-media-marketing.png" target="blank">
+                        <img src="images/small-biz-social-media-marketing.png"
+                            alt="Adobe Social Impact Challenge Image">
+                    </a>
                     <a href="pdfs/Adobe_Social_Impact_Challenge_FA24.pdf" target="_blank">Adobe Social Impact
                         Challenge</a>
                 </div>
@@ -611,155 +636,169 @@
         }
     </style>
 
-<section id="experience">
-    <h2>Experience</h2>
+    <section id="experience">
+        <h2>Experience</h2>
 
-    <!-- Research Assistant Intern Experience -->
-    <div class="experience">
-        <div class="experience-header">
-            <div class="left">
-                <div class="position">Research Assistant Intern</div>
-                <div class="organization">Korea Defense Veterans Association</div>
+        <!-- Research Assistant Intern Experience -->
+        <div class="experience">
+            <div class="experience-header">
+                <div class="left">
+                    <div class="position">Research Assistant Intern</div>
+                    <div class="organization">Korea Defense Veterans Association</div>
+                </div>
+                <div class="right">
+                    <div class="location">Salt Lake City, UT</div>
+                    <div class="date">Jan 2025 – Present</div>
+                </div>
             </div>
-            <div class="right">
-                <div class="location">Salt Lake City, UT</div>
-                <div class="date">Jan 2025 – Present</div>
+            <ul>
+                <li>Researching ROK-U.S. Alliance topics, writing articles for the KDVA Quarterly Journal, Monthly
+                    Newsletter, and social media, and assisting with social media management.</li>
+            </ul>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <a href="images/kdva_logo.png" target="blank">
+                        <img src="images/kdva_logo.png" alt="KDVA Logo">
+                    </a>
+                    <a href="pdfs/KDVA Journal 25-1_English.pdf" target="_blank">Research Report_1 PDF</a>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- External & Alumni Relations Intern Experience -->
+        <div class="experience">
+            <div class="experience-header">
+                <div class="left">
+                    <div class="position">External & Alumni Relations Intern</div>
+                    <div class="organization">Office of External & Alumni Relations, University of Utah Asia Campus
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="location">Incheon, South Korea</div>
+                    <div class="date">Jul 2023 – Dec 2023</div>
+                </div>
+            </div>
+            <ul>
+                <li>Collaborated with external organizations for more external activities and tripled the participants
+                    from 20 to 60 students.</li>
+                <li>Developed 15+ local business partnerships with the University.</li>
+                <li>Promoted the Utah Alumni Dinner Event to connect students with the University President, State of
+                    Utah Senators, and alumni, while also hosting in-school guest speaking sessions with a Major General
+                    (USAR).</li>
+            </ul>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <a href="images/Alumni_Night_Event.jpg" target="blank">
+                        <img src="images/Alumni_Night_Event.jpg" alt="Alumni Event Image">
+                    </a>
+                    <a href="https://www.instagram.com/p/CzeQiKbxXu3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                        target="_blank">UofU President SNS: Alumni Night Event</a>
+                    <a href="pdfs/ER_Activity.pdf" target="_blank">External Relations Report</a>
+                    <a href="pdfs/ER_Pumassi.pdf" target="_blank">ER Pumassi Activity Report</a>
+                    <a href="https://www.worldkorean.net/news/articleView.html?idxno=50073" target="_blank">Pumassi :
+                        End of Year Night Article [KR]</a>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- Special Forces Interpreter & Translator Experience -->
+        <div class="experience">
+            <div class="experience-header">
+                <div class="left">
+                    <div class="position">Special Forces Interpreter & Translator</div>
+                    <div class="organization">Republic of Korea Special Warfare Command, CSOCC</div>
+                </div>
+                <div class="right">
+                    <div class="location">Gyeonggi, South Korea</div>
+                    <div class="date">Feb 2021 – Aug 2022</div>
+                </div>
+            </div>
+            <ul>
+                <li>Interpreted military operations for special mission units and translated military intelligence
+                    between the ROK Special Forces and the US Special Forces (USASOC & AFSOC).</li>
+                <li>Appreciation Award Recipient – Participated in Combined Command Post Training with the US Special
+                    Forces as the Interpreter of the Combined Joint Special Operations Liaison Element.</li>
+                <li>Achieved the Certificate of Qualification for Airborne Basic Course.</li>
+            </ul>
+            <div class="resources">
+                <div class="resource-attachments">
+                    <a href="images/swc.png" target="blank">
+                        <img src="images/swc.png" alt="ROKA Special Warfare Command">
+                        <img src="images/airborne_certificate.jpg" alt="Airborne Basic Course Certificate">
+                        <img src="images/22-1_CCPT.jpg" alt="ROK-US CCPT CJSOLE Image"></a>
+                </div>
             </div>
         </div>
-        <ul>
-            <li>Researching ROK-U.S. Alliance topics, writing articles for the KDVA Quarterly Journal, Monthly Newsletter, and social media, and assisting with social media management.</li>
-        </ul>
-        <div class="resources">
-            <div class="resource-attachments">
-                <img src="images/kdva_logo.png" alt="KDVA Logo">
-                <a href="pdfs/KDVA Journal 25-1_English.pdf" target="_blank">Research Report_1 PDF</a>
-            </div>
-        </div>
-    </div><br>
+    </section>
 
-    <!-- External & Alumni Relations Intern Experience -->
-    <div class="experience">
-        <div class="experience-header">
-            <div class="left">
-                <div class="position">External & Alumni Relations Intern</div>
-                <div class="organization">Office of External & Alumni Relations, University of Utah Asia Campus</div>
-            </div>
-            <div class="right">
-                <div class="location">Incheon, South Korea</div>
-                <div class="date">Jul 2023 – Dec 2023</div>
-            </div>
-        </div>
-        <ul>
-            <li>Collaborated with external organizations for more external activities and tripled the participants from 20 to 60 students.</li>
-            <li>Developed 15+ local business partnerships with the University.</li>
-            <li>Promoted the Utah Alumni Dinner Event to connect students with the University President, State of Utah Senators, and alumni, while also hosting in-school guest speaking sessions with a Major General (USAR).</li>
-        </ul>
-        <div class="resources">
-            <div class="resource-attachments">
-                <img src="images/Alumni_Night_Event.jpg" alt="Alumni Event Image">
-                <a href="https://www.instagram.com/p/CzeQiKbxXu3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">UofU President SNS: Alumni Night Event</a>
-                <a href="pdfs/ER_Activity.pdf" target="_blank">External Relations Report</a>
-                <a href="pdfs/ER_Pumassi.pdf" target="_blank">ER Pumassi Activity Report</a>
-                <a href="https://www.worldkorean.net/news/articleView.html?idxno=50073" target="_blank">Pumassi : End of Year Night Article [KR]</a>
-            </div>
-        </div>
-    </div><br>
+    <style>
+        .experience {
+            margin-bottom: 2rem;
+        }
 
-    <!-- Special Forces Interpreter & Translator Experience -->
-    <div class="experience">
-        <div class="experience-header">
-            <div class="left">
-                <div class="position">Special Forces Interpreter & Translator</div>
-                <div class="organization">Republic of Korea Special Warfare Command, CSOCC</div>
-            </div>
-            <div class="right">
-                <div class="location">Gyeonggi, South Korea</div>
-                <div class="date">Feb 2021 – Aug 2022</div>
-            </div>
-        </div>
-        <ul>
-            <li>Interpreted military operations for special mission units and translated military intelligence between the ROK Special Forces and the US Special Forces (USASOC & AFSOC).</li>
-            <li>Appreciation Award Recipient – Participated in Combined Command Post Training with the US Special Forces as the Interpreter of the Combined Joint Special Operations Liaison Element.</li>
-            <li>Achieved the Certificate of Qualification for Airborne Basic Course.</li>
-        </ul>
-        <div class="resources">
-            <div class="resource-attachments">
-                <img src="images/swc.png" alt="ROKA Special Warfare Command">
-                <img src="images/airborne_certificate.jpg" alt="Airborne Basic Course Certificate">
-                <img src="images/22-1_CCPT.jpg" alt="ROK-US CCPT CJSOLE Image">
-            </div>
-        </div>
-    </div>
-</section>
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-<style>
-    .experience {
-        margin-bottom: 2rem;
-    }
+        .position,
+        .organization {
+            font-weight: bold;
+        }
 
-    .experience-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .location,
+        .date {
+            font-size: 0.9rem;
+            color: #666;
+        }
 
-    .position,
-    .organization {
-        font-weight: bold;
-    }
+        .resources {
+            margin-top: 1rem;
+        }
 
-    .location,
-    .date {
-        font-size: 0.9rem;
-        color: #666;
-    }
+        .resource-attachments {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
 
-    .resources {
-        margin-top: 1rem;
-    }
+        .resource-attachments img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
 
-    .resource-attachments {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-    }
+        .resource-attachments img:hover {
+            transform: scale(2.5) translate(15px, 0);
+            object-fit: contain;
+            z-index: 10;
+        }
 
-    .resource-attachments img {
-        width: 150px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, z-index 0.3s ease;
-        position: relative;
-        z-index: 1;
-    }
+        .resource-attachments a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-    .resource-attachments img:hover {
-        transform: scale(2.5) translate(15px, 0);
-        object-fit: contain;
-        z-index: 10;
-    }
-
-    .resource-attachments a {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #f0f0f0;
-        color: black;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: transform 0.2s ease, background-color 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .resource-attachments a:hover {
-        transform: scale(1.05);
-        background-color: #dcdcdc;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-</style>
+        .resource-attachments a:hover {
+            transform: scale(1.05);
+            background-color: #dcdcdc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 
     <section id="contact">
         <h2>Contact</h2>
