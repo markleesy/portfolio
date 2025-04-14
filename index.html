@@ -577,17 +577,25 @@
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
             margin: 0;
+            flex: 1;
         }
 
         .project-date {
             font-size: 1rem;
-            color: #666;
+            color: #333;
+            font-style: italic;
+            white-space: nowrap;
+            text-align: right;
+            min-width: fit-content;
         }
 
         .resources {
@@ -636,6 +644,42 @@
             background-color: #dcdcdc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
+
+        /* Target only image buttons inside .resource-attachments */
+        .resource-attachments a:has(img) {
+            padding: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: transparent;
+            box-shadow: none;
+            position: relative;
+            /* to enable absolute positioning on hover */
+        }
+
+        /* Resize the image to fill the button size */
+        .resource-attachments a:has(img) img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            /* prevent double rounding from both <a> and <img> */
+            box-shadow: none;
+            transition: transform 0.4s ease, z-index 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Hover effect for image buttons: Pop up outside of button */
+        .resource-attachments a:has(img):hover img {
+            transform: scale(3) translate(30px, 0);
+            /* Adjust translate for pop-up effect */
+            object-fit: contain;
+            z-index: 999;
+        }
+
+        /* Prevent the image from being clipped if it's hovering outside */
+        .resource-attachments a:has(img):hover {
+            overflow: visible;
+        }
     </style>
 
     <section id="experience">
@@ -643,265 +687,323 @@
 
         <section id="experience">
             <h2>Experience</h2>
-          
+
             <!-- Research Assistant Intern Experience -->
             <div class="experience">
-              <div class="experience-header">
-                <div class="experience-left">
-                  <img src="images/kdva_logo.png" alt="KDVA Logo" class="experience-logo" />
+                <div class="experience-header">
+                    <div class="experience-left">
+                        <img src="images/kdva_logo.png" alt="KDVA Logo" class="experience-logo" />
+                    </div>
+                    <div class="experience-right">
+                        <div class="position-org">
+                            <div class="position">Research Assistant Intern</div>
+                            <div class="organization">Korea Defense Veterans Association</div>
+                        </div>
+                        <div class="location-date">
+                            <div class="location">Salt Lake City, UT</div>
+                            <div class="date">Jan 2025 to Present</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="experience-right">
-                  <div class="position-org">
-                    <div class="position">Research Assistant Intern</div>
-                    <div class="organization">Korea Defense Veterans Association</div>
-                  </div>
-                  <div class="location-date">
-                    <div class="location">Salt Lake City, UT</div>
-                    <div class="date">Jan 2025 to Present</div>
-                  </div>
+                <ul>
+                    <li>Researching ROK-U.S. Alliance topics, writing articles for the KDVA Quarterly Journal, Monthly
+                        Newsletter, and social media, and assisting with social media management.</li>
+                </ul>
+                <div class="resources">
+                    <div class="resource-attachments">
+                        <a href="pdfs/KDVA Journal 25-1_English.pdf" target="_blank">Research Report_1 PDF</a>
+                    </div>
                 </div>
-              </div>
-              <ul>
-                <li>Researching ROK-U.S. Alliance topics, writing articles for the KDVA Quarterly Journal, Monthly Newsletter, and social media, and assisting with social media management.</li>
-              </ul>
-              <div class="resources">
-                <div class="resource-attachments">
-                  <a href="pdfs/KDVA Journal 25-1_English.pdf" target="_blank">Research Report_1 PDF</a>
-                </div>
-              </div>
             </div>
-          
+
             <!-- External & Alumni Relations Intern Experience -->
             <div class="experience">
-              <div class="experience-header">
-                <div class="experience-left">
-                  <img src="images/uofu_logo.png" alt="University of Utah Logo" class="experience-logo" />
+                <div class="experience-header">
+                    <div class="experience-left">
+                        <img src="images/uofu_logo.png" alt="University of Utah Logo" class="experience-logo" />
+                    </div>
+                    <div class="experience-right">
+                        <div class="position-org">
+                            <div class="position">External & Alumni Relations Intern</div>
+                            <div class="organization">University of Utah Asia Campus</div>
+                        </div>
+                        <div class="location-date">
+                            <div class="location">Incheon, South Korea</div>
+                            <div class="date">Jul 2023 – Dec 2023</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="experience-right">
-                  <div class="position-org">
-                    <div class="position">External & Alumni Relations Intern</div>
-                    <div class="organization">University of Utah Asia Campus</div>
-                  </div>
-                  <div class="location-date">
-                    <div class="location">Incheon, South Korea</div>
-                    <div class="date">Jul 2023 – Dec 2023</div>
-                  </div>
+                <ul>
+                    <li>Collaborated with external organizations and tripled event participation from 20 to 60 students.
+                    </li>
+                    <li>Developed 15+ partnerships with local businesses and promoted key events like the Utah Alumni
+                        Dinner with high-profile attendees.</li>
+                </ul>
+                <div class="resources">
+                    <div class="resource-attachments">
+                        <a href="images/Alumni_Night_Event.jpg" target="_blank">
+                            <img src="images/Alumni_Night_Event.jpg" alt="Alumni Event Image">
+                        </a>
+                        <a href="https://www.instagram.com/p/CzeQiKbxXu3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                            target="_blank">
+                            UofU President SNS: Alumni Night Event
+                        </a>
+                        <a href="pdfs/ER_Activity.pdf" target="_blank">External Relations Report</a>
+                        <a href="pdfs/ER_Pumassi.pdf" target="_blank">ER Pumassi Activity Report</a>
+                        <a href="https://www.worldkorean.net/news/articleView.html?idxno=50073" target="_blank">Pumassi:
+                            End of Year Night Article [KR]</a>
+                    </div>
                 </div>
-              </div>
-              <ul>
-                <li>Collaborated with external organizations and tripled event participation from 20 to 60 students.</li>
-                <li>Developed 15+ partnerships with local businesses and promoted key events like the Utah Alumni Dinner with high-profile attendees.</li>
-              </ul>
-              <div class="resources">
-                <div class="resource-attachments">
-                  <a href="images/Alumni_Night_Event.jpg" target="_blank">
-                    <img src="images/Alumni_Night_Event.jpg" alt="Alumni Event Image">
-                  </a>
-                  <a href="https://www.instagram.com/p/CzeQiKbxXu3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                    UofU President SNS: Alumni Night Event
-                  </a>
-                  <a href="pdfs/ER_Activity.pdf" target="_blank">External Relations Report</a>
-                  <a href="pdfs/ER_Pumassi.pdf" target="_blank">ER Pumassi Activity Report</a>
-                  <a href="https://www.worldkorean.net/news/articleView.html?idxno=50073" target="_blank">Pumassi: End of Year Night Article [KR]</a>
-                </div>
-              </div>
             </div>
-          
+
             <!-- Special Forces Interpreter & Translator Experience -->
             <div class="experience">
-              <div class="experience-header">
-                <div class="experience-left">
-                  <img src="images/swc.png" alt="ROKA SWC Logo" class="experience-logo" />
+                <div class="experience-header">
+                    <div class="experience-left">
+                        <img src="images/swc.png" alt="ROKA SWC Logo" class="experience-logo" />
+                    </div>
+                    <div class="experience-right">
+                        <div class="position-org">
+                            <div class="position">Interpreter & Translator</div>
+                            <div class="organization">Republic of Korea Special Warfare Command, CSOCC</div>
+                        </div>
+                        <div class="location-date">
+                            <div class="location">South Korea</div>
+                            <div class="date">Feb 2021 – Aug 2022</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="experience-right">
-                  <div class="position-org">
-                    <div class="position">Interpreter & Translator</div>
-                    <div class="organization">Republic of Korea Special Warfare Command, CSOCC</div>
-                  </div>
-                  <div class="location-date">
-                    <div class="location">South Korea</div>
-                    <div class="date">Feb 2021 – Aug 2022</div>
-                  </div>
+                <ul>
+                    <li>Interpreted military operations and translated intelligence between ROK and US Special Forces.
+                    </li>
+                    <li>Awarded for contributions to combined command post training as CJSOLE interpreter. Completed
+                        Airborne Basic Course.</li>
+                </ul>
+                <div class="resources">
+                    <div class="resource-attachments">
+                        <a href="images/airborne_certificate.jpg" target="_blank">
+                            <img src="images/airborne_certificate.jpg" alt="Airborne Basic Course Certificate">
+                        </a>
+                        <a href="images/22-1_CCPT.jpg" target="_blank">
+                            <img src="images/22-1_CCPT.jpg" alt="ROK-US CCPT CJSOLE Image">
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <ul>
-                <li>Interpreted military operations and translated intelligence between ROK and US Special Forces.</li>
-                <li>Awarded for contributions to combined command post training as CJSOLE interpreter. Completed Airborne Basic Course.</li>
-              </ul>
-              <div class="resources">
-                <div class="resource-attachments">
-                  <a href="images/airborne_certificate.jpg" target="_blank">
-                    <img src="images/airborne_certificate.jpg" alt="Airborne Basic Course Certificate">
-                  </a>
-                  <a href="images/22-1_CCPT.jpg" target="_blank">
-                    <img src="images/22-1_CCPT.jpg" alt="ROK-US CCPT CJSOLE Image">
-                  </a>
-                </div>
-              </div>
             </div>
-          </section>
-          
+        </section>
 
-    <style>
-        .experience {
-          margin-bottom: 2rem;
-        }
-      
-        .experience-header {
-          display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-        }
-      
-        .experience-logo {
-          width: 60px;
-          height: 60px;
-          object-fit: contain;
-          border-radius: 8px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          flex-shrink: 0;
-        }
-      
-        .experience-right {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          flex-wrap: wrap;
-        }
-      
-        .position-org {
-          display: flex;
-          flex-direction: column;
-          font-weight: bold;
-          font-size: 1.5rem;
-        }
-      
-        .location-date {
-          text-align: right;
-          font-size: 1rem;
-          color: #666;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          margin-left: auto;
-        }
-      
-        .resources {
-          margin-top: 1rem;
-        }
-      
-        .resource-attachments {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          align-items: center;
-          position: relative;
-        }
-      
-        .resource-attachments img {
-          width: 150px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: 8px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease, z-index 0.3s ease;
-          position: relative;
-          z-index: 1;
-        }
-      
-        .resource-attachments img:hover {
-          transform: scale(2.5) translate(15px, 0);
-          object-fit: contain;
-          z-index: 999;
-        }
-      
-        .resource-attachments a {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: #f0f0f0;
-          color: black;
-          text-decoration: none;
-          border-radius: 8px;
-          font-weight: bold;
-          transition: transform 0.2s ease, background-color 0.3s ease;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-      
-        .resource-attachments a:hover {
-          transform: scale(1.05);
-          background-color: #dcdcdc;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-      </style>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-buttons">
-            <a href="mailto:markeesy@gmail.com" class="contact-button">
-                <img src="images/gmail.png" alt="Email Icon" class="email-icon" />
-                Email
-            </a>
-        </div>
-    </section>
+        <style>
+            .experience {
+                margin-bottom: 2rem;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 1.5rem;
+            }
 
-    <style>
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+            .experience-header {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+                flex-direction: row;
+                /* ensure horizontal layout */
+                flex-wrap: nowrap;
+            }
 
-        .contact-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            /* Light-themed background */
-            color: #333;
-            /* Dark text color for contrast */
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+            .experience-left {
+                flex-shrink: 0;
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                border-radius: 50%;
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .contact-button img {
-            height: 18px;
-            margin-right: 8px;
-        }
+            .experience-logo {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                flex-shrink: 0;
+            }
 
-        .contact-button:hover {
-            transform: scale(1.05);
-            background-color: #ddd;
-            /* Slightly darker background on hover */
-        }
+            .experience-right {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                flex-wrap: wrap;
+            }
 
-        @media (prefers-color-scheme: dark) {
+            .position-org {
+                display: flex;
+                flex-direction: column;
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+
+            .position-org .organization {
+                font-size: 1rem;
+                color: #555;
+            }
+
+            .location-date {
+                text-align: right;
+                font-size: 1rem;
+                color: #666;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: auto;
+            }
+
+            .resources {
+                margin-top: 1rem;
+            }
+
+            .resources img {
+                max-width: 100px;
+                height: auto;
+                transition: transform 0.3s ease;
+                margin: 0.3rem;
+            }
+
+            .resources img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .resource-attachments {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                align-items: center;
+                position: relative;
+            }
+
+            .resource-attachments img {
+                width: 150px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, z-index 0.3s ease;
+                position: relative;
+                z-index: 1;
+            }
+
+            .resource-attachments img:hover {
+                transform: scale(2.5) translate(15px, 0);
+                object-fit: contain;
+                z-index: 999;
+            }
+
+            .resource-attachments a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #f0f0f0;
+                color: black;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: bold;
+                transition: transform 0.2s ease, background-color 0.3s ease;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .resource-attachments a:hover {
+                transform: scale(1.05);
+                background-color: #dcdcdc;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            @media (max-width: 600px) {
+                .experience-header {
+                    flex-direction: row;
+                    /* Keep horizontal even on mobile */
+                    align-items: flex-start;
+                }
+
+                .experience-left {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .resources img {
+                    max-width: 80px;
+                }
+            }
+        </style>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-buttons">
+                <a href="mailto:markeesy@gmail.com" class="contact-button">
+                    <img src="images/gmail.png" alt="Email Icon" class="email-icon" />
+                    Email
+                </a>
+            </div>
+        </section>
+
+        <style>
+            .contact-buttons {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
             .contact-button {
-                background-color: #444;
-                /* Dark background in dark mode */
-                color: white;
-                /* Light text for dark mode */
+                display: inline-flex;
+                align-items: center;
+                padding: 10px 20px;
+                background-color: #f0f0f0;
+                /* Light-themed background */
+                color: #333;
+                /* Dark text color for contrast */
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: transform 0.2s ease, background-color 0.3s ease;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .contact-button img {
+                height: 18px;
+                margin-right: 8px;
             }
 
             .contact-button:hover {
-                background-color: #555;
-                /* Slightly lighter background on hover */
+                transform: scale(1.05);
+                background-color: #ddd;
+                /* Slightly darker background on hover */
             }
-        }
-    </style>
 
-    <footer>
-        <p>&copy; 2025 SOOYOUNG LEE. All rights reserved.</p>
-    </footer>
+            @media (prefers-color-scheme: dark) {
+                .contact-button {
+                    background-color: #444;
+                    /* Dark background in dark mode */
+                    color: white;
+                    /* Light text for dark mode */
+                }
 
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            document.getElementById('navbar').classList.toggle('dark-mode');
-        }
-    </script>
+                .contact-button:hover {
+                    background-color: #555;
+                    /* Slightly lighter background on hover */
+                }
+            }
+        </style>
+
+        <footer>
+            <p>&copy; 2025 SOOYOUNG LEE. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function toggleTheme() {
+                document.body.classList.toggle('dark-mode');
+                document.getElementById('navbar').classList.toggle('dark-mode');
+            }
+        </script>
 </body>
 
 </html>
