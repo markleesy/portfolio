@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sooyoung Lee Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&amp;family=Noto+Sans+KR:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #111;
+      --muted: #666;
+      --card: #f2f2f2;
+      --card-hover: #ddd;
+      --border: #e0e0e0;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      --width: 960px;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #f1f1f1;
+      --muted: #bbb;
+      --card: #303030;
+      --card-hover: #444;
+      --border: #444;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", "Noto Sans KR", Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    nav strong {
+      font-family: "Poppins", "Noto Sans KR", sans-serif;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .theme-toggle,
+    .language-toggle {
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      border: 0;
+      background: transparent;
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .language-toggle {
+      min-width: 72px;
+      padding: 0.3rem 0.55rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--bg);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .language-toggle:hover {
+      background: var(--card-hover);
+    }
+
+    section {
+      max-width: var(--width);
+      margin: auto;
+      padding: 3.75rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Poppins", "Noto Sans KR", sans-serif;
+      margin-top: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 0.4rem;
+    }
+
+    h4 {
+      margin: 1rem 0 0.35rem;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .about-grid {
+      display: block;
+    }
+
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .about-name {
+      font-size: clamp(2.8rem, 7vw, 5.25rem);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+
+    .about-profile {
+      width: 280px;
+      justify-self: end;
+    }
+
+    .about-profile .profile-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .about-profile .buttons {
+      justify-content: center;
+      margin-top: 0.85rem;
+    }
+
+    .about-details {
+      width: 100%;
+    }
+
+    .profile-photo,
+    .logo,
+    .project-image {
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .buttons,
+    .resources,
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .button,
+    .resources a,
+    .skill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .button:hover,
+    .resources a:hover,
+    .skill:hover {
+      transform: translateY(-2px);
+      background: var(--card-hover);
+    }
+
+    .button img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      box-shadow: none;
+    }
+
+    .skill-category {
+      margin-bottom: 1.4rem;
+    }
+
+    .skill-category h3 {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.3rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 0.65rem;
+      max-width: 860px;
+      margin: auto;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+    }
+
+    .skill {
+      min-width: 0;
+      width: max-content;
+      flex: 0 0 auto;
+    }
+
+    .item {
+      margin-bottom: 2.5rem;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .date,
+    .location,
+    .organization {
+      color: var(--muted);
+    }
+
+    .date {
+      white-space: nowrap;
+      font-style: italic;
+    }
+
+    .resources {
+      margin-top: 0.75rem;
+    }
+
+    .resources img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .resources a:has(img) {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .experience-header {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr) minmax(180px, auto);
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .experience-header>div:last-child {
+      justify-self: end;
+      text-align: right;
+    }
+
+    .experience-header .location,
+    .experience-header .date {
+      text-align: right;
+    }
+
+    .logo-wrap {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      max-height: 64px;
+      object-fit: contain;
+      box-shadow: none;
+    }
+
+    .logo-wrap i {
+      font-size: 1.55rem;
+      color: var(--muted);
+    }
+
+    .sub-role {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li+li {
+      margin-top: 0.45rem;
+    }
+
+    .cert-list {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+    }
+
+    .cert-detail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-left: 0.5rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .cert-detail:hover {
+      background: var(--card-hover);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      background: var(--card);
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 0.65rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        display: block;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        margin-top: 0.75rem;
+      }
+
+      .about-hero {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .about-name {
+        font-size: clamp(2.6rem, 13vw, 4rem);
+      }
+
+      .about-profile {
+        width: min(240px, 100%);
+        justify-self: center;
+      }
+
+      .profile-photo {
+        margin: auto;
+      }
+
+      .item-header,
+      .experience-header {
+        display: block;
+      }
+
+      .experience-header>div:last-child,
+      .experience-header .location,
+      .experience-header .date {
+        text-align: right;
+      }
+
+      .date {
+        white-space: normal;
+      }
+
+      .logo-wrap {
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .skills-row {
+        gap: 0.55rem;
+      }
+    }
+  </style>
+</head>
+
+<body data-language="en">
+  <nav>
+    <strong data-en="SOOYOUNG LEE" data-ko="이수영">SOOYOUNG LEE</strong>
+    <div class="nav-links">
+      <a data-en="About" data-ko="소개" href="#about">About</a>
+      <a data-en="Skills" data-ko="기술" href="#skills">Skills</a>
+      <a data-en="Experience" data-ko="경력" href="#experience">Experience</a>
+      <a data-en="Projects" data-ko="프로젝트" href="#projects">Projects</a>
+      <a data-en="Certifications &amp; Awards" data-ko="자격증 및 수상" href="#certifications">Certifications &amp; Awards</a>
+      <a data-en="Contact" data-ko="연락처" href="#contact">Contact</a>
+      <div class="nav-controls">
+        <button aria-label="Switch to Korean" class="language-toggle" title="Switch language" type="button">ENG</button>
+        <button aria-label="Toggle dark mode" class="theme-toggle" type="button"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </nav>
+  <section id="about">
+    <h1 data-en="About Me" data-ko="소개">About Me</h1>
+    <div class="about-grid">
+      <div class="about-hero">
+        <h2 class="about-name" data-en="SOOYOUNG LEE" data-ko="이수영">SOOYOUNG LEE</h2>
+        <div class="about-profile">
+          <img alt="Sooyoung Lee" class="profile-photo" src="images/sooyoung.jpg" />
+          <div class="buttons">
+            <a class="button" href="https://www.linkedin.com/in/swimlee" rel="noopener noreferrer" target="_blank">
+              <img alt="LinkedIn icon" src="images/LinkedIn_icon.svg.png" /> <span data-en="LinkedIn"
+                data-ko="링크드인">LinkedIn</span>
+            </a>
+            <a class="button" href="pdfs/SooyoungLee_Resume.pdf" target="_blank">
+              <span data-en="📄 Resume" data-ko="📄 이력서">📄 Resume</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="about-details">
+        <h3 data-en="🏫 University of Utah" data-ko="🏫 유타대학교">🏫 University of Utah</h3>
+        <p>
+          🎓 <strong data-en="M.S. Information Systems" data-ko="정보시스템 석사">M.S. Information Systems</strong>,
+          <strong data-en="Graduate Certificate in Cybersecurity Management" data-ko="사이버보안 관리 대학원 수료증">Graduate
+            Certificate in Cybersecurity Management</strong>,
+          <em data-en="July 2026" data-ko="2026년 7월">July 2026</em><br />
+          🎓 <strong data-en="B.S. Communications" data-ko="커뮤니케이션 학사">B.S. Communications</strong>,
+          <strong data-en="Minor in Information Systems" data-ko="정보시스템 부전공">Minor in Information Systems</strong>,
+          <em data-en="May 2025" data-ko="2025년 5월">May 2025</em>
+        </p>
+        <p data-en="I hold an M.S. in Information Systems from the University of Utah, along with a Graduate Certificate in Cybersecurity Management and a B.S. in Communications with a minor in Information Systems. My background combines technical problem-solving, cybersecurity, web development, data analytics, and cross-cultural communication."
+          data-ko="유타대학교에서 정보시스템 석사 학위와 사이버보안 관리 대학원 수료증을 취득했으며, 커뮤니케이션 학사와 정보시스템 부전공을 이수했습니다. 기술적 문제 해결, 사이버보안, 웹 개발, 데이터 분석, 그리고 다문화 커뮤니케이션을 아우르는 경험을 갖추고 있습니다.">
+          I hold an M.S. in Information Systems from the University of Utah, along with a Graduate Certificate in
+          Cybersecurity Management and a B.S. in Communications with a minor in Information Systems. My background
+          combines technical problem-solving, cybersecurity, web development, data analytics, and cross-cultural
+          communication.</p>
+        <p data-en="Through university IT support, web application instruction, independent PC building, military operations, and technology competitions, I have worked with Python, Django, SQL, Windows and Linux systems, networking, cybersecurity concepts, data visualization, and workflow automation. I enjoy diagnosing problems, improving processes, and turning technical requirements into practical solutions."
+          data-ko="대학 IT 지원, 웹 애플리케이션 수업 조교, 개인 PC 조립, 군 작전 지원, 기술 경진대회 경험을 통해 파이썬, 장고, SQL, 윈도우와 리눅스 시스템, 네트워킹, 사이버보안 개념, 데이터 시각화, 업무 자동화를 다뤘습니다. 문제를 진단하고 절차를 개선하며 기술 요구사항을 실용적인 해결책으로 구현하는 데 강점이 있습니다.">
+          Through university IT support, web application instruction, independent PC building, military operations, and
+          technology competitions, I have worked with Python, Django, SQL, Windows and Linux systems, networking,
+          cybersecurity concepts, data visualization, and workflow automation. I enjoy diagnosing problems, improving
+          processes, and turning technical requirements into practical solutions.</p>
+        <p data-en="I am pursuing opportunities in information systems, cybersecurity, IT support and operations, infrastructure, and technology consulting where I can combine hands-on technical skills with clear communication and disciplined problem-solving."
+          data-ko="정보시스템, 사이버보안, IT 지원 및 운영, 인프라, 기술 컨설팅 분야에서 실무형 기술 역량과 명확한 커뮤니케이션, 체계적인 문제 해결 능력을 함께 활용할 수 있는 기회를 찾고 있습니다.">
+          I am pursuing opportunities in information systems, cybersecurity, IT support and operations, infrastructure,
+          and technology consulting where I can combine hands-on technical skills with clear communication and
+          disciplined problem-solving.</p>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <h1 data-en="Skills" data-ko="기술">Skills</h1>
+    <div class="skill-category">
+      <h3 data-en="Language" data-ko="언어">Language</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill" data-en="English - Fluent" data-ko="영어 - 유창">English -
+            Fluent</span><span class="skill" data-en="Korean - Native" data-ko="한국어 - 모국어">Korean - Native</span></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 data-en="Programming" data-ko="프로그래밍">Programming</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill">Python</span><span class="skill">SQL</span><span
+            class="skill">HTML</span><span class="skill">CSS</span></div>
+        <div class="skills-row"><span class="skill">R</span><span class="skill">Bash</span></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 data-en="Frameworks &amp; Web Technologies" data-ko="프레임워크 및 웹 기술">Frameworks &amp; Web Technologies</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill">Django</span><span class="skill">Django REST Framework</span><span
+            class="skill">REST APIs</span><span class="skill">Retool</span></div>
+        <div class="skills-row"><span class="skill">Salesforce CRM</span><span class="skill">SharePoint</span><span
+            class="skill">Power Automate</span></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 data-en="Data &amp; Databases" data-ko="데이터 및 데이터베이스">Data &amp; Databases</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill">SQLite</span><span class="skill">MySQL</span><span
+            class="skill">Supabase</span><span class="skill">Pandas</span></div>
+        <div class="skills-row"><span class="skill">Tableau</span><span class="skill">Power BI</span><span
+            class="skill">Domo</span><span class="skill">Microsoft Excel</span></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 data-en="Cybersecurity &amp; Networking" data-ko="사이버보안 및 네트워킹">Cybersecurity &amp; Networking</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill" data-en="SIEM Concepts" data-ko="SIEM 개념">SIEM Concepts</span><span
+            class="skill" data-en="Incident Response" data-ko="사고 대응">Incident Response</span><span class="skill">MITRE
+            ATT&amp;CK</span><span class="skill" data-en="Cyber Kill Chain" data-ko="사이버 킬 체인">Cyber Kill Chain</span>
+        </div>
+        <div class="skills-row"><span class="skill">IOC</span><span class="skill">TCP/IP</span><span class="skill"
+            data-en="Routing &amp; Switching" data-ko="라우팅 및 스위칭">Routing &amp; Switching</span><span
+            class="skill">VLANs</span></div>
+        <div class="skills-row"><span class="skill">VPNs</span><span class="skill" data-en="Firewalls"
+            data-ko="방화벽">Firewalls</span></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 data-en="Systems, Hardware &amp; Development Tools" data-ko="시스템, 하드웨어 및 개발 도구">Systems, Hardware &amp;
+        Development Tools</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill">Windows</span><span class="skill">Linux</span><span
+            class="skill">macOS</span><span class="skill" data-en="PC Assembly" data-ko="PC 조립">PC Assembly</span></div>
+        <div class="skills-row"><span class="skill">BIOS/UEFI</span><span class="skill"
+            data-en="Hardware Troubleshooting" data-ko="하드웨어 문제 해결">Hardware Troubleshooting</span><span
+            class="skill">Git</span><span class="skill">GitHub</span></div>
+        <div class="skills-row"><span class="skill">Cursor</span><span class="skill">Visual Studio Code</span></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3 data-en="Design Tools" data-ko="디자인 도구">Design Tools</h3>
+      <div class="skills-grid">
+        <div class="skills-row"><span class="skill">Adobe Photoshop</span><span class="skill">Premiere Pro</span><span
+            class="skill">After Effects</span><span class="skill">Final Cut Pro</span></div>
+      </div>
+    </div>
+  </section>
+  <section id="experience">
+    <h1 data-en="Experience" data-ko="경력">Experience</h1>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><img alt="University of Utah logo" class="logo" src="images/UU-Logo.jpg" /></div>
+        <div>
+          <h3 data-en="Exam Services Technician" data-ko="온라인 시험 서비스 감독관">Exam Services Technician</h3>
+          <div class="organization" data-en="University of Utah, University Connected Learning"
+            data-ko="유타대학교 University Connected Learning">University of Utah, University Connected Learning</div>
+        </div>
+        <div>
+          <div class="location" data-en="Salt Lake City, UT, USA" data-ko="미국 유타주 솔트레이크시티">Salt Lake City, UT, USA</div>
+          <div class="date" data-en="Jan 2026 – Jul 2026" data-ko="2026년 1월 – 2026년 7월">Jan 2026 – Jul 2026</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Supported 50+ students daily with exam check-in, access, workstation issues, and testing procedures in a controlled testing environment."
+          data-ko="통제된 시험 환경에서 매일 50명 이상의 학생을 대상으로 체크인, 시험 접속, 워크스테이션 문제, 시험 절차를 지원했습니다.">Supported 50+ students daily
+          with exam check-in, access, workstation issues, and testing procedures in a controlled testing environment.
+        </li>
+        <li
+          data-en="Verified hardware connectivity, software configurations, and operational readiness across 120+ testing workstations before daily operations."
+          data-ko="매일 시험 운영 전 120대 이상의 시험용 워크스테이션에서 하드웨어 연결, 소프트웨어 설정, 운영 준비 상태를 점검했습니다.">Verified hardware
+          connectivity, software configurations, and operational readiness across 120+ testing workstations before daily
+          operations.</li>
+        <li
+          data-en="Coordinated high-volume testing during peak periods reaching 300+ students per day and assisted with Canvas-related access issues."
+          data-ko="중간·기말고사 성수기에 하루 300명 이상이 이용하는 고밀도 시험 운영을 지원하고 Canvas 관련 시험 접속 문제를 해결했습니다.">Coordinated high-volume
+          testing during peak periods reaching 300+ students per day and assisted with Canvas-related access issues.
+        </li>
+      </ul>
+    </article>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><img alt="University of Utah Eccles logo" class="logo" src="images/U_Eccles.png" /></div>
+        <div>
+          <h3 data-en="Teaching Assistant – IS 4460 Web-Based Applications" data-ko="조교 – IS 4460 웹 기반 애플리케이션">Teaching
+            Assistant – IS 4460 Web-Based Applications</h3>
+          <div class="organization" data-en="University of Utah, David Eccles School of Business"
+            data-ko="유타대학교 David Eccles 경영대학">University of Utah, David Eccles School of Business</div>
+        </div>
+        <div>
+          <div class="location" data-en="Salt Lake City, UT, USA" data-ko="미국 유타주 솔트레이크시티">Salt Lake City, UT, USA</div>
+          <div class="date" data-en="Jun 2026 – Jul 2026" data-ko="2026년 6월 – 2026년 7월">Jun 2026 – Jul 2026</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Delivered technical guidance and grading support to 20+ students in Python, Django, HTML, CSS, and JavaScript."
+          data-ko="20명 이상의 학생에게 파이썬, 장고, HTML, CSS, 자바스크립트 관련 기술 지도와 채점 지원을 제공했습니다.">Delivered technical guidance and
+          grading support to 20+ students in Python, Django, HTML, CSS, and JavaScript.</li>
+        <li
+          data-en="Reviewed course modules, labs, and instructional materials for technical accuracy and functionality before delivery."
+          data-ko="수업 전 강의 모듈, 실습, 교육 자료의 기술적 정확성과 기능을 검토했습니다.">Reviewed course modules, labs, and instructional
+          materials for technical accuracy and functionality before delivery.</li>
+        <li
+          data-en="Contributed to a 9.9% improvement in student grades through individualized technical support for students with limited programming backgrounds."
+          data-ko="프로그래밍 경험이 적은 학생에게 개별 기술 지원을 제공해 학생 성적 9.9% 향상에 기여했습니다.">Contributed to a 9.9% improvement in student
+          grades through individualized technical support for students with limited programming backgrounds.</li>
+      </ul>
+    </article>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><i aria-hidden="true" class="fas fa-desktop"></i></div>
+        <div>
+          <h3 data-en="Custom PC Building &amp; Hardware Configuration" data-ko="맞춤형 PC 조립 및 하드웨어 구성">Custom PC Building
+            &amp;
+            Hardware Configuration</h3>
+          <div class="organization" data-en="Independent Technical Experience" data-ko="개인 경험">Independent Technical
+            Experience</div>
+        </div>
+        <div>
+          <div class="location" data-en="Seoul, South Korea" data-ko="대한민국 서울">Seoul, South Korea</div>
+          <div class="date" data-en="Feb 2017 – Present" data-ko="2017년 2월 – 현재">Feb 2017 – Present</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Built and upgraded 10+ custom desktops by evaluating hardware compatibility and selecting components based on performance requirements and budgets."
+          data-ko="성능 요구사항과 예산을 고려해 하드웨어 호환성을 검토하고 부품을 선정하여 10대 이상의 맞춤형 데스크톱을 조립·업그레이드했습니다.">Built and upgraded 10+
+          custom desktops by evaluating hardware compatibility and selecting components based on performance
+          requirements and budgets.</li>
+        <li
+          data-en="Configured BIOS/UEFI settings, installed Windows and device drivers, and resolved hardware/software compatibility issues."
+          data-ko="BIOS/UEFI를 설정하고 Windows와 장치 드라이버를 설치했으며 하드웨어·소프트웨어 호환성 문제를 해결했습니다.">Configured BIOS/UEFI settings,
+          installed Windows and device drivers, and resolved hardware/software compatibility issues.</li>
+        <li
+          data-en="Diagnosed performance and hardware issues and performed targeted upgrades to improve reliability and system longevity."
+          data-ko="성능과 하드웨어 문제를 진단하고 필요한 업그레이드를 수행해 안정성과 시스템 수명을 개선했습니다.">Diagnosed performance and hardware issues and
+          performed targeted upgrades to improve reliability and system longevity.</li>
+      </ul>
+    </article>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><img alt="KDVA logo" class="logo" src="images/kdva_logo.png" /></div>
+        <div>
+          <h3 data-en="Research Assistant Intern" data-ko="리서치 어시스턴트 인턴">Research Assistant Intern</h3>
+          <div class="organization" data-en="Korea Defense Veterans Association" data-ko="한미동맹재단 KDVA">Korea Defense
+            Veterans Association</div>
+        </div>
+        <div>
+          <div class="location" data-en="Salt Lake City, UT, USA" data-ko="미국 유타주 솔트레이크시티">Salt Lake City, UT, USA</div>
+          <div class="date" data-en="Jan 2025 – Dec 2025" data-ko="2025년 1월 – 2025년 12월">Jan 2025 – Dec 2025</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Researched ROK–U.S. Alliance and defense topics and produced content for the KDVA Quarterly Journal, Monthly Newsletter, and social media channels."
+          data-ko="한미동맹과 국방 관련 주제를 조사하고 KDVA 분기 저널, 월간 뉴스레터, 소셜미디어 콘텐츠를 작성했습니다.">Researched ROK–U.S. Alliance and
+          defense topics and produced content for the KDVA Quarterly Journal, Monthly Newsletter, and social media
+          channels.</li>
+      </ul>
+      <div class="resources">
+        <a href="pdfs/KDVA Journal 25-1_English.pdf" target="_blank"><span data-en="Quarterly Journal 1"
+            data-ko="1분기 저널">Quarterly Journal 1</span></a>
+        <a href="pdfs/KDVA Journal 25-2 English.pdf" target="_blank"><span data-en="Quarterly Journal 2"
+            data-ko="2분기 저널">Quarterly Journal 2</span></a>
+        <a href="pdfs/KDVA Journal 25-3 English.pdf" target="_blank"><span data-en="Quarterly Journal 3"
+            data-ko="3분기 저널">Quarterly Journal 3</span></a>
+      </div>
+    </article>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><img alt="University of Utah logo" class="logo" src="images/uofu_logo.png" /></div>
+        <div>
+          <h3 data-en="External &amp; Alumni Relations Intern" data-ko="대외협력 및 동문관계 인턴">External &amp; Alumni Relations
+            Intern</h3>
+          <div class="organization" data-en="University of Utah Asia Campus, Office of External &amp; Alumni Relations"
+            data-ko="유타대학교 아시아캠퍼스 대외협력 및 동문관계실">University of Utah Asia Campus, Office of External &amp; Alumni
+            Relations</div>
+        </div>
+        <div>
+          <div class="location" data-en="Songdo, Incheon, South Korea" data-ko="대한민국 인천 송도">Songdo, Incheon, South Korea
+          </div>
+          <div class="date" data-en="Aug 2023 – Dec 2023" data-ko="2023년 8월 – 2023년 12월">Aug 2023 – Dec 2023</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Increased student event participation by 150% through outreach and collaboration with 3+ external organizations."
+          data-ko="3개 이상의 외부 기관과의 협업 및 홍보를 통해 학생 행사 참여율을 150% 향상했습니다.">Increased student event participation by 150%
+          through outreach and collaboration with 3+ external organizations.</li>
+        <li data-en="Established 15+ local business partnerships and supported 5+ on-campus guest speaker sessions."
+          data-ko="15개 이상의 지역 비즈니스 파트너십을 구축하고 5회 이상의 교내 초청 강연을 지원했습니다.">Established 15+ local business partnerships and
+          supported 5+ on-campus guest speaker sessions.</li>
+        <li
+          data-en="Promoted the Utah Alumni Dinner and supported outreach connecting current students with 30+ alumni."
+          data-ko="Utah Alumni Dinner를 홍보하고 재학생과 30명 이상의 동문을 연결하는 교류 활동을 지원했습니다.">Promoted the Utah Alumni Dinner and
+          supported outreach connecting current students with 30+ alumni.</li>
+      </ul>
+      <div class="resources">
+        <a href="images/Alumni_Night_Event.jpg" target="_blank"><span data-en="Event Photo" data-ko="행사 사진">Event
+            Photo</span></a>
+        <a href="pdfs/Pumassi Certificate of Appreciation.pdf" target="_blank"><span
+            data-en="Pumassi Appreciation Award" data-ko="품앗이 감사장">Pumassi Appreciation Award</span></a>
+        <a href="https://www.instagram.com/p/CzeQiKbxXu3/?utm_source=ig_web_copy_link&amp;igsh=MzRlODBiNWFlZA=="
+          rel="noopener noreferrer" target="_blank"><span data-en="University President: Alumni Night Event"
+            data-ko="유타대학교 총장: Alumni Night 행사">University President: Alumni Night Event</span></a>
+      </div>
+    </article>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><i aria-hidden="true" class="fas fa-golf-ball-tee"></i></div>
+        <div>
+          <h3 data-en="Front Desk Operations Staff" data-ko="프런트 데스크 운영 직원">Front Desk Operations Staff</h3>
+          <div class="organization" data-en="Golf King Academy, Daebakdreams Co" data-ko="골프킹 아카데미, 대박드림스">Golf King
+            Academy, Daebakdreams Co</div>
+        </div>
+        <div>
+          <div class="location" data-en="Songdo, Incheon, South Korea" data-ko="대한민국 인천 송도">Songdo, Incheon, South Korea
+          </div>
+          <div class="date" data-en="Aug 2022 – May 2023" data-ko="2022년 8월 – 2023년 5월">Aug 2022 – May 2023</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Reduced golf sensor malfunction reports by 90% through routine technical inspections, issue identification, and maintenance support for 30+ automated ball distribution systems."
+          data-ko="30대 이상의 자동 골프공 분배 시스템을 정기 점검하고 문제를 식별·정비하여 센서 오작동 신고를 90% 줄였습니다.">Reduced golf sensor malfunction
+          reports by 90% through routine technical inspections, issue identification, and maintenance support for 30+
+          automated ball distribution systems.</li>
+        <li
+          data-en="Contributed to a 33% increase in facility usage satisfaction through responsive customer support and reliable operations."
+          data-ko="신속한 고객 지원과 안정적인 시설 운영을 통해 시설 이용 만족도 33% 향상에 기여했습니다.">Contributed to a 33% increase in facility usage
+          satisfaction through responsive customer support and reliable operations.</li>
+        <li
+          data-en="Supported 100+ guests daily with check-in, facility guidance, technical assistance, and front desk administration."
+          data-ko="매일 100명 이상의 고객을 대상으로 체크인, 시설 안내, 기술 지원, 프런트 행정 업무를 수행했습니다.">Supported 100+ guests daily with
+          check-in, facility guidance, technical assistance, and front desk administration.</li>
+      </ul>
+    </article>
+    <article class="item">
+      <div class="experience-header">
+        <div class="logo-wrap"><img alt="ROK Special Warfare Command logo" class="logo" src="images/swc.png" /></div>
+        <div>
+          <h3 data-en="Special Operations Interpreter &amp; Translator, Certified Parachutist"
+            data-ko="특수전사령부 어학행정병 | 공수 기본과정 수료">Special Operations Interpreter &amp; Translator, Certified Parachutist
+          </h3>
+          <div class="organization" data-en="Republic of Korea Special Warfare Command Headquarters"
+            data-ko="대한민국 육군 특수전사령부 본부">Republic of Korea Special Warfare Command Headquarters</div>
+        </div>
+        <div>
+          <div class="location" data-en="Icheon, Gyeonggi, South Korea" data-ko="대한민국 경기도 이천">Icheon, Gyeonggi, South
+            Korea</div>
+          <div class="date" data-en="Feb 2021 – Aug 2022" data-ko="2021년 2월 – 2022년 8월">Feb 2021 – Aug 2022</div>
+        </div>
+      </div>
+      <ul>
+        <li
+          data-en="Provided interpretation for 20+ military operations and translated 40+ intelligence and operational materials supporting ROK–U.S. Special Operations coordination."
+          data-ko="한미 특수작전 협력을 지원하며 20회 이상의 군사 작전에서 통역하고 40건 이상의 정보·작전 자료를 번역했습니다.">Provided interpretation for 20+
+          military operations and translated 40+ intelligence and operational materials supporting ROK–U.S. Special
+          Operations coordination.</li>
+        <li
+          data-en="Coordinated 10+ visits and combined training exercises involving international Special Operations personnel, including USSOCOM."
+          data-ko="미국 특수작전사령부를 포함한 해외 특수작전 인원이 참여하는 10회 이상의 방문 및 연합훈련을 조율했습니다.">Coordinated 10+ visits and combined
+          training exercises involving international Special Operations personnel, including USSOCOM.</li>
+        <li
+          data-en="Supported branch IT operations by managing intranet-connected hardware, troubleshooting software issues, and reviewing Internet PC usage logs for security compliance."
+          data-ko="인트라넷 연결 하드웨어 관리, 소프트웨어 문제 해결, 인터넷 PC 사용 기록 검토를 통해 부서 IT 운영과 보안 준수를 지원했습니다.">Supported branch IT
+          operations by managing intranet-connected hardware, troubleshooting software issues, and reviewing Internet PC
+          usage logs for security compliance.</li>
+        <li
+          data-en="Assisted with monthly internal security audits covering command regulations, account management requirements, and established security procedures."
+          data-ko="지휘부 보안 규정, 계정 관리 요구사항, 내부 보안 절차 준수 여부를 확인하는 월간 내부 보안 점검을 지원했습니다.">Assisted with monthly internal
+          security audits covering command regulations, account management requirements, and established security
+          procedures.</li>
+        <li
+          data-en="Reviewed and maintained 1,000+ ROK–U.S. military terms and operational references used in semiannual interpreter training."
+          data-ko="반기 특수작전 통역 교육에 사용되는 1,000개 이상의 한미 군사 용어와 작전 참고자료를 검토·관리했습니다.">Reviewed and maintained 1,000+ ROK–U.S.
+          military terms and operational references used in semiannual interpreter training.</li>
+        <li data-en="Completed the ROK Army Airborne Basic Course and earned qualification as a military parachutist."
+          data-ko="육군 공수기본교육을 수료하고 군 공수 자격을 취득했습니다.">Completed the ROK Army Airborne Basic Course and earned
+          qualification as a military parachutist.</li>
+      </ul>
+      <div class="resources">
+        <a href="pdfs/airborne_certificate.pdf" target="_blank"><span data-en="Airborne Basic Course Certificate"
+            data-ko="공수기본과정 수료증">Airborne Basic Course Certificate</span></a>
+      </div>
+      <div class="sub-role">
+        <div class="experience-header">
+          <div class="logo-wrap"><img alt="Combined Joint Special Operations Liaison Element logo" class="logo"
+              src="images/cjsole.jpg" /></div>
+          <div>
+            <h3 data-en="CJSOLE Interpreter" data-ko="특수작전연락반 통역병">Interpreter</h3>
+            <div class="organization" data-en="Osan Air Force Base - Combined Joint Special Operations Liaison Element"
+              data-ko="오산 공군기지 - 연합합동특수작전연락반">Osan Air Force Base - Combined Joint Special Operations Liaison Element
+            </div>
+          </div>
+          <div>
+            <div class="location" data-en="Osan, Gyeonggi, South Korea" data-ko="대한민국 경기도 오산">Osan, Gyeonggi, South
+              Korea</div>
+            <div class="date" data-en="Aug 2021 – Apr 2022" data-ko="2021년 8월 – 2022년 4월">Aug 2021 – Apr 2022</div>
+          </div>
+        </div>
+        <ul>
+          <li
+            data-en="Received an Appreciation Award for real-time interpretation during lieutenant general-level operational briefings throughout 14-day Combined Command Post Training exercises."
+            data-ko="14일간의 연합지휘소훈련에서 중장급 작전 브리핑의 실시간 통역을 수행하여 감사장을 수상했습니다.">Received an Appreciation Award for real-time
+            interpretation during lieutenant general-level operational briefings throughout 14-day Combined Command Post
+            Training exercises.</li>
+          <li
+            data-en="Interpreted mission status, personnel tracking, and air-support coordination between multinational command teams and deployed Special Operations units."
+            data-ko="다국적 지휘팀과 전개된 특수작전 부대 사이에서 임무 현황, 인원 추적, 항공 지원 조정 내용을 통역했습니다.">Interpreted mission status, personnel
+            tracking, and air-support coordination between multinational command teams and deployed Special Operations
+            units.</li>
+        </ul>
+      </div>
+      <div class="resources">
+        <a href="images/22-1_CCPT.jpg" target="_blank"><span data-en="Training Photo" data-ko="훈련 사진">Training
+            Photo</span></a>
+        <a href="pdfs/AppreciationAward.pdf" target="_blank"><span data-en="SOCKOR Appreciation Award"
+            data-ko="주한미특수작전사령부 감사장">SOCKOR Appreciation Award</span></a>
+      </div>
+    </article>
+  </section>
+  <section id="projects">
+    <h1 data-en="Projects" data-ko="프로젝트">Projects</h1>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="Rocky Mountain University AI Workflow Development Capstone"
+          data-ko="Rocky Mountain Univ. 인공지능 워크플로우 개발 캡스톤">RMU AI Agent Development Capstone
+        </h3>
+        <span class="date" data-en="Jul 2026" data-ko="2026년 7월">Jul 2026</span>
+      </div>
+      <p data-en="Managed the development of a workflow automation solution that processes Canvas student activity data, flags inactive students, and streamlines registrar attendance review through SharePoint and Power Automate."
+        data-ko="Canvas 학생 활동 데이터를 처리하고 비활동 학생을 식별하며 SharePoint와 Power Automate를 통해 학사 담당자의 출석 검토를 간소화하는 업무 자동화 솔루션 개발을 관리했습니다.">
+        Managed the development of a workflow automation solution that processes Canvas student activity data, flags
+        inactive students, and streamlines registrar attendance review through SharePoint and Power Automate.</p>
+      <ul>
+        <li
+          data-en="Served as Project Manager for a three-member team, coordinating weekly sponsor meetings and project milestones."
+          data-ko="3인 팀의 프로젝트 매니저로서 주간 스폰서 회의와 프로젝트 마일스톤을 조율했습니다.">Served as Project Manager for a three-member team,
+          coordinating weekly sponsor meetings and project milestones.</li>
+        <li data-en="Validated completed features against project requirements before stakeholder demonstrations."
+          data-ko="이해관계자 시연 전에 완성된 기능을 프로젝트 요구사항과 비교해 검증했습니다.">Validated completed features against project requirements
+          before stakeholder demonstrations.</li>
+        <li
+          data-en="Developed user presentations and instructional videos to support stakeholder training and system adoption."
+          data-ko="이해관계자 교육과 시스템 도입을 지원하기 위해 사용자 발표자료와 교육 영상을 제작했습니다.">Developed user presentations and instructional
+          videos to support stakeholder training and system adoption.</li>
+      </ul>
+      <p><strong data-en="Technologies:" data-ko="사용 기술:">Technologies:</strong> SharePoint, Microsoft Power Automate,
+        Canvas</p>
+      <div class="resources">
+        <a href="pdfs/Capstone_Project_RMU_SOW.pdf" target="_blank"><span data-en="Capstone_Statement of Work"
+            data-ko="캡스톤 프로젝트 계획서">Capstone Project Statement of Work</span></a>
+        <a href="pdfs/RMU_Automated_Workflow_Report.pdf" target="_blank"><span data-en="Capstone_Report"
+            data-ko="캡스톤 프로젝트 보고서">Capstone Project Report</span></a>
+        <a href="pdfs/RMU_Automated_Workflow_Presentation.pdf" target="_blank"><span data-en="Capstone_Presentation"
+            data-ko="캡스톤 프로젝트 발표자료">Capstone Project Presentation</span></a>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="2026 AI Hackathon" data-ko="2026 AI 해커톤">2026 AI Hackathon</h3>
+        <span class="date" data-en="Apr 2026" data-ko="2026년 4월">Apr 2026</span>
+      </div>
+      <p data-en="Collaborated on a five-member team to develop an AI-powered meeting management system that automates meeting summaries, action-item extraction, and follow-up tracking."
+        data-ko="5인 팀으로 AI 기반 회의 관리 시스템을 개발해 회의 요약, 실행 항목 추출, 후속 조치 추적을 자동화했습니다.">Collaborated on a five-member team to
+        develop an AI-powered meeting management system that automates meeting summaries, action-item extraction, and
+        follow-up tracking.</p>
+      <ul>
+        <li data-en="Maintained project presentation materials as system features evolved during the hackathon."
+          data-ko="해커톤 동안 시스템 기능이 발전함에 따라 프로젝트 발표자료를 지속적으로 업데이트했습니다.">Maintained project presentation materials as
+          system features evolved during the hackathon.</li>
+        <li data-en="Translated technical progress into clear presentations for judges and stakeholders."
+          data-ko="기술 개발 진행 상황을 심사위원과 이해관계자가 이해하기 쉬운 발표 내용으로 정리했습니다.">Translated technical progress into clear
+          presentations for judges and stakeholders.</li>
+      </ul>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="2026 Generative AI Competition" data-ko="2026 생성형 AI 경진대회">2026 Generative AI Competition</h3>
+        <span class="date" data-en="Mar 2026" data-ko="2026년 3월">Mar 2026</span>
+      </div>
+      <p data-en="Collaborated on an AI-powered web system using Cursor and Supabase that automated request intake and routing for Children's Community Health within six hours."
+        data-ko="Cursor와 Supabase를 활용해 Children's Community Health의 요청 접수와 분류를 자동화하는 AI 기반 웹 시스템을 6시간 내에 팀과 함께 개발했습니다.">
+        Collaborated on an AI-powered web system using Cursor and Supabase that automated request intake and routing for
+        Children's Community Health within six hours.</p>
+      <ul>
+        <li
+          data-en="Contributed to the web application's UI through consistent visual design, color schemes, and graphics."
+          data-ko="일관된 시각 디자인, 색상 구성, 그래픽을 적용해 웹 애플리케이션 UI 개발에 기여했습니다.">Contributed to the web application's UI through
+          consistent visual design, color schemes, and graphics.</li>
+        <li
+          data-en="Developed presentation materials and communicated the solution's technical approach and business value to competition judges."
+          data-ko="발표자료를 제작하고 솔루션의 기술적 접근 방식과 비즈니스 가치를 심사위원에게 설명했습니다.">Developed presentation materials and communicated
+          the solution's technical approach and business value to competition judges.</li>
+      </ul>
+      <p><strong data-en="Technologies:" data-ko="사용 기술:">Technologies:</strong> Cursor, Supabase, AI, Web Development
+      </p>
+      <div class="resources">
+        <a href="images/2026_GenAI_Team_CIA_photo.jpg" target="_blank"><span data-en="Team Photo" data-ko="팀 사진">Team
+            Photo</span></a>
+        <a href="pdfs/2026_GenAI_Team_CIA.pdf" target="_blank"><span data-en="Competition Presentation"
+            data-ko="경진대회 발표자료">Competition Presentation</span></a>
+      </div>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="2025/2026 Information Systems Game Day Analytics Challenge" data-ko="2025/2026 슈퍼볼 미식축구 트윗 분석 대회">
+          2025/2026 Information Systems Game Day Analytics Challenge</h3>
+        <span class="date" data-en="Feb 2025 / Feb 2026" data-ko="2025년 2월 / 2026년 2월">Feb 2025 / Feb 2026</span>
+      </div>
+      <p data-en="Analyzed Super Bowl commercial tweets from the Twitter API using AI-assisted Python workflows to evaluate advertiser sentiment and return on ad spending."
+        data-ko="AI 지원 파이썬 워크플로를 활용해 Twitter API의 슈퍼볼 광고 관련 트윗을 분석하고 광고주 감성과 광고비 대비 수익을 평가했습니다.">Analyzed Super Bowl
+        commercial tweets from the Twitter API using AI-assisted Python workflows to evaluate advertiser sentiment and
+        return on ad spending.</p>
+      <ul>
+        <li
+          data-en="Created word clouds, bar charts, pie charts, and line charts for sentiment analysis and business interpretation."
+          data-ko="감성 분석과 비즈니스 해석을 위해 워드클라우드, 막대그래프, 원그래프, 선그래프를 제작했습니다.">Created word clouds, bar charts, pie charts,
+          and line charts for sentiment analysis and business interpretation.</li>
+        <li data-en="Designed infographics and documented the team's methodology, findings, and recommendations."
+          data-ko="인포그래픽을 디자인하고 팀의 분석 방법, 결과, 비즈니스 제안을 문서화했습니다.">Designed infographics and documented the team's
+          methodology, findings, and recommendations.</li>
+      </ul>
+      <p><strong data-en="Technologies:" data-ko="사용 기술:">Technologies:</strong> Python, Twitter API, Data Analytics,
+        Data Visualization</p>
+      <div class="resources">
+        <a href="pdfs/Game_Day_Whitepaper_2026.pdf" target="_blank"><span data-en="2026 Report" data-ko="2026 보고서">2026
+            Report</span></a>
+        <a href="pdfs/Game_Day_Infographic_2026.pdf" target="_blank"><span data-en="2026 Presentation"
+            data-ko="2026 발표자료">2026 Presentation</span></a>
+        <a href="pdfs/Game_Day_Whitepaper_2025.pdf" target="_blank"><span data-en="2025 Report" data-ko="2025 보고서">2025
+            Report</span></a>
+        <a href="pdfs/Game_Day_Infographic_2025.pdf" target="_blank"><span data-en="2025 Presentation"
+            data-ko="2025 발표자료">2025 Presentation</span></a>
+      </div>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="Parking Permit Website" data-ko="캠퍼스 주차 관리 웹사이트">Parking Permit Website</h3>
+        <span class="date" data-en="Apr 2025" data-ko="2025년 4월">Apr 2025</span>
+      </div>
+      <p data-en="Developed a responsive Django-based parking permit management application with secure user authentication, vehicle registration, permit management, and RESTful APIs."
+        data-ko="안전한 사용자 인증, 차량 등록, 주차 허가 관리, RESTful API를 갖춘 반응형 Django 기반 주차 허가 관리 애플리케이션을 개발했습니다.">Developed a
+        responsive Django-based parking permit management application with secure user authentication, vehicle
+        registration, permit management, and RESTful APIs.</p>
+      <ul>
+        <li data-en="Built backend functionality with Django ORM, database models, and REST API endpoints."
+          data-ko="Django ORM, 데이터베이스 모델, REST API 엔드포인트를 활용해 백엔드 기능을 구현했습니다.">Built backend functionality with Django
+          ORM, database models, and REST API endpoints.</li>
+        <li
+          data-en="Implemented registration, login, and password validation requirements for secure user authentication."
+          data-ko="안전한 사용자 인증을 위해 회원가입, 로그인, 비밀번호 검증 요구사항을 구현했습니다.">Implemented registration, login, and password
+          validation requirements for secure user authentication.</li>
+        <li
+          data-en="Continued development after the course concluded to deliver a fully functional application beyond the original requirements."
+          data-ko="수업 종료 후에도 개발을 이어가 초기 요구사항을 넘어 완전한 기능을 갖춘 애플리케이션으로 완성했습니다.">Continued development after the course
+          concluded to deliver a fully functional application beyond the original requirements.</li>
+      </ul>
+      <p><strong data-en="Technologies:" data-ko="사용 기술:">Technologies:</strong> Python, Django, Django REST Framework,
+        HTML, CSS, SQLite</p>
+      <div class="resources"><a href="pdfs/IS 4460 Final Project Documentation.pdf" target="_blank"><span
+            data-en="Project Overview" data-ko="프로젝트 개요">Project Overview</span></a></div>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="2025 Generative AI Competition" data-ko="2025 생성형 AI 경진대회">2025 Generative AI Competition</h3>
+        <span class="date" data-en="Mar 2025" data-ko="2025년 3월">Mar 2025</span>
+      </div>
+      <p data-en="Collaborated with a four-member team to build an AI-powered healthcare web application in Retool, integrating a GPT-powered chatbot within six hours."
+        data-ko="4인 팀으로 Retool을 활용한 AI 기반 헬스케어 웹 애플리케이션을 개발하고 6시간 내에 GPT 기반 챗봇을 통합했습니다.">Collaborated with a four-member
+        team to build an AI-powered healthcare web application in Retool, integrating a GPT-powered chatbot within six
+        hours.</p>
+      <ul>
+        <li
+          data-en="Developed backend workflows, evaluated built-in GPT models, and tested chatbot interactions with predefined user scenarios."
+          data-ko="백엔드 워크플로를 개발하고 내장 GPT 모델을 비교·선정했으며 사전 정의된 사용자 시나리오로 챗봇 상호작용을 테스트했습니다.">Developed backend workflows,
+          evaluated built-in GPT models, and tested chatbot interactions with predefined user scenarios.</li>
+        <li
+          data-en="Collaborated across frontend and backend workstreams and presented the completed solution to competition judges."
+          data-ko="프론트엔드와 백엔드 작업을 조율하고 완성된 솔루션을 경진대회 심사위원에게 발표했습니다.">Collaborated across frontend and backend
+          workstreams and presented the completed solution to competition judges.</li>
+      </ul>
+      <p><strong data-en="Technologies:" data-ko="사용 기술:">Technologies:</strong> Retool, GPT, AI, Web Development</p>
+      <div class="resources">
+        <a href="images/1744359522896-4.jpg" target="_blank"><span data-en="Competition Photo"
+            data-ko="경진대회 사진">Competition Photo</span></a>
+        <a href="pdfs/AI_Hackathon_Web_Demo_SP25.pdf" target="_blank"><span data-en="Competition Demo"
+            data-ko="경진대회 데모">Competition Demo</span></a>
+        <a href="pdfs/AI Competition_Presentation_SP25.pdf" target="_blank"><span data-en="Competition Presentation"
+            data-ko="경진대회 발표자료">Competition Presentation</span></a>
+      </div>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="Domo-Layton Construction Hackathon" data-ko="Domo-Layton Construction 해커톤">Domo-Layton Construction
+          Hackathon</h3>
+        <span class="date" data-en="Nov 2024" data-ko="2024년 11월">Nov 2024</span>
+      </div>
+      <p data-en="Collaborated with a three-member team to develop a Domo dashboard that visualized construction safety metrics and identified factors associated with workplace incidents within 48 hours."
+        data-ko="3인 팀으로 48시간 내에 건설 안전 지표를 시각화하고 작업장 사고와 관련된 요인을 파악하는 Domo 대시보드를 개발했습니다.">Collaborated with a
+        three-member team to develop a Domo dashboard that visualized construction safety metrics and identified factors
+        associated with workplace incidents within 48 hours.</p>
+      <ul>
+        <li
+          data-en="Organized KPIs, charts, and safety metrics into an executive dashboard and translated analytical findings into business-focused recommendations."
+          data-ko="KPI, 차트, 안전 지표를 경영진용 대시보드로 구성하고 분석 결과를 비즈니스 중심의 제안으로 전환했습니다.">Organized KPIs, charts, and safety
+          metrics into an executive dashboard and translated analytical findings into business-focused recommendations.
+        </li>
+      </ul>
+      <div class="resources"><a href="pdfs/Domo-Layton_FA24.pdf" target="_blank"><span data-en="Hackathon Presentation"
+            data-ko="해커톤 발표자료">Hackathon Presentation</span></a></div>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="Social Impact Challenge: Eccles Adobe Business Case Competition"
+          data-ko="소셜 임팩트 챌린지: Eccles Adobe 비즈니스 사례 경진대회">Social Impact Challenge: Eccles Adobe Business Case
+          Competition</h3>
+        <span class="date" data-en="Oct 2024" data-ko="2024년 10월">Oct 2024</span>
+      </div>
+      <p data-en="Collaborated with a three-member team to develop a digital marketing campaign for Tech-Moms using Adobe Express, earning the Adobe Small Business Social Marketing Badge."
+        data-ko="3인 팀으로 Adobe Express를 활용해 Tech-Moms를 위한 디지털 마케팅 캠페인을 개발하고 Adobe Small Business Social Marketing 배지를 취득했습니다.">
+        Collaborated with a three-member team to develop a digital marketing campaign for Tech-Moms using Adobe Express,
+        earning the Adobe Small Business Social Marketing Badge.</p>
+      <div class="resources">
+        <a href="images/small-biz-social-media-marketing.png" target="_blank"><span data-en="Badge Image"
+            data-ko="배지 이미지">Badge Image</span></a>
+        <a href="pdfs/Adobe_Social_Impact_Challenge_FA24.pdf" target="_blank"><span data-en="Competition Presentation"
+            data-ko="경진대회 발표자료">Competition Presentation</span></a>
+      </div>
+    </article>
+    <article class="item">
+      <div class="item-header">
+        <h3 data-en="Salesforce-Eccles Ideathon: Chatbot Design and Development Competition"
+          data-ko="Salesforce-Eccles 아이디어톤: 챗봇 설계 및 개발 경진대회">Salesforce-Eccles Ideathon: Chatbot Design and Development
+          Competition</h3>
+        <span class="date" data-en="Sep 2024" data-ko="2024년 9월">Sep 2024</span>
+      </div>
+      <p data-en="Collaborated with a three-member team to develop a Salesforce chatbot that streamlined driver's license appointment scheduling and customer support workflows."
+        data-ko="3인 팀으로 운전면허 예약과 고객 지원 절차를 간소화하는 Salesforce 챗봇을 개발했습니다.">Collaborated with a three-member team to
+        develop a Salesforce chatbot that streamlined driver's license appointment scheduling and customer support
+        workflows.</p>
+      <ul>
+        <li
+          data-en="Designed rule-based conversation flows, decision logic, information collection, appointment scheduling, and live-agent routing."
+          data-ko="규칙 기반 대화 흐름과 의사결정 로직을 설계하고 정보 수집, 예약, 상담원 연결 기능을 구성했습니다.">Designed rule-based conversation flows,
+          decision logic, information collection, appointment scheduling, and live-agent routing.</li>
+      </ul>
+      <div class="resources">
+        <a href="pdfs/IDEAthon Documentation_FA24.pdf" target="_blank"><span data-en="Ideathon Report"
+            data-ko="아이디어톤 보고서">Ideathon Report</span></a>
+        <a href="pdfs/Salesforce IDEAthon_FA24.pdf" target="_blank"><span data-en="Ideathon Presentation"
+            data-ko="아이디어톤 발표자료">Ideathon Presentation</span></a>
+      </div>
+    </article>
+  </section>
+  <section id="certifications">
+    <h1 data-en="Certifications &amp; Awards" data-ko="자격증 및 수상">Certifications &amp; Awards</h1>
+    <ul class="cert-list">
+      <li data-en="CompTIA Network+ (N10-009) | In Progress" data-ko="CompTIA Network+ (N10-009) | 준비 중">CompTIA
+        Network+ (N10-009) | In Progress</li>
+      <li>
+        <span data-en="CompTIA Security+ (SY0-701) | Jul 2026" data-ko="CompTIA Security+ (SY0-701) | 2026년 7월">CompTIA
+          Security+ (SY0-701) | Jul 2026</span>
+        <a class="cert-detail" href="pdfs/CompTIA Security+ ce certificate.pdf" rel="noopener noreferrer"
+          target="_blank">
+          <i aria-hidden="true" class="fas fa-file-pdf"></i>
+          <span data-en="See detail" data-ko="자세히 보기">See detail</span>
+        </a>
+      </li>
+      <li>
+        <span data-en="Google Cybersecurity Professional Certificate | Jun 2026"
+          data-ko="Google 사이버보안 전문 자격증 | 2026년 6월">Google Cybersecurity Professional Certificate | Jun 2026</span>
+        <a class="cert-detail" href="pdfs/Google Cybersecurity Professional Certificate.pdf" rel="noopener noreferrer"
+          target="_blank">
+          <i aria-hidden="true" class="fas fa-file-pdf"></i>
+          <span data-en="See detail" data-ko="자세히 보기">See detail</span>
+        </a>
+      </li>
+      <li>
+        <span data-en="Airborne Basic Course Qualification — Republic of Korea Special Warfare Command | Apr 2022"
+          data-ko="공수기본교육 자격 — 대한민국 특수전사령부 | 2022년 4월">Airborne Basic Course Qualification — Republic of Korea Special
+          Warfare Command | Apr 2022</span>
+        <a class="cert-detail" href="pdfs/airborne_certificate.pdf" rel="noopener noreferrer" target="_blank">
+          <i aria-hidden="true" class="fas fa-file-pdf"></i>
+          <span data-en="See detail" data-ko="자세히 보기">See detail</span>
+        </a>
+      </li>
+      <li>
+        <span
+          data-en="Appreciation Award — Osan Air Force Base - Combined Joint Special Operations Liaison Element | Aug 2021"
+          data-ko="감사장 — 오산 공군기지 - 한미연합합동특수작전연락반 | 2021년 8월">Appreciation Award — Osan Air Force Base - Combined Joint
+          Special Operations Liaison Element | Aug 2021</span>
+        <a class="cert-detail" href="pdfs/AppreciationAward.pdf" rel="noopener noreferrer" target="_blank">
+          <i aria-hidden="true" class="fas fa-file-pdf"></i>
+          <span data-en="See detail" data-ko="자세히 보기">See detail</span>
+        </a>
+      </li>
+      <li data-en="Dean's List — University of Utah | Fall 2022, Spring 2023, Fall 2023, Spring 2024"
+        data-ko="Dean's List — 유타대학교 | 2022년 가을, 2023년 봄, 2023년 가을, 2024년 봄">Dean's List — University of Utah | Fall
+        2022, Spring 2023, Fall 2023, Spring 2024</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h1 data-en="Contact" data-ko="연락처">Contact</h1>
+    <div class="buttons" style="justify-content:center">
+      <a class="button" href="mailto:markleesy@gmail.com">
+        <img alt="Email icon" src="images/gmail.png" />
+        <span data-en="Email" data-ko="이메일">Email</span>
+      </a>
+    </div>
+  </section>
+  <footer><span data-en="© 2026 SOOYOUNG LEE. All rights reserved." data-ko="© 2026 이수영. All rights reserved.">© 2026
+      SOOYOUNG LEE. All rights reserved.</span></footer>
+  <script>
+    const themeButton = document.querySelector(".theme-toggle");
+    const languageButton = document.querySelector(".language-toggle");
+
+    function setLanguage(language) {
+      const isKorean = language === "ko";
+      document.documentElement.lang = language;
+      document.body.dataset.language = language;
+
+      document.querySelectorAll("[data-en][data-ko]").forEach((element) => {
+        element.textContent = element.dataset[language];
+      });
+
+      languageButton.textContent = isKorean ? "KOR" : "ENG";
+      languageButton.setAttribute("aria-label", isKorean ? "영어로 전환" : "Switch to Korean");
+      languageButton.title = isKorean ? "언어 전환" : "Switch language";
+      document.title = isKorean ? "이수영 포트폴리오" : "Sooyoung Lee Portfolio";
+      localStorage.setItem("portfolio-language", language);
+    }
+
+    function setTheme(darkMode) {
+      document.body.classList.toggle("dark-mode", darkMode);
+      themeButton.innerHTML = darkMode
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+      localStorage.setItem("portfolio-theme", darkMode ? "dark" : "light");
+    }
+
+    themeButton.addEventListener("click", () => {
+      setTheme(!document.body.classList.contains("dark-mode"));
+    });
+
+    languageButton.addEventListener("click", () => {
+      const currentLanguage = document.body.dataset.language || "en";
+      setLanguage(currentLanguage === "en" ? "ko" : "en");
+    });
+
+    setLanguage(localStorage.getItem("portfolio-language") || "en");
+    setTheme(localStorage.getItem("portfolio-theme") === "dark");
+  </script>
+</body>
+
+</html>
